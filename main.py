@@ -34,9 +34,8 @@ u = 'https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png'
 st.image(u, width = 150)
 
 
-st.image(u, width=100)
-
 st.markdown(f'<h1 style="color:#000000;font-size:35px;">{"Weed Detech"}</h1>', unsafe_allow_html=True)
+st.markdown(f'<h1 style="color:#000000;font-size:15px;">{"Spelled as We Detect"}</h1>', unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#000000;font-size:15px;">{"Note: The word weed here refers to unwanted plant growth."}</h1>', unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#000000;font-size:24px;">{"Farmers waste hours scouring fields to find weeds, our model helps them drastically reduce this time. Weed Detech helps farmer detect the position of weed on a field with a single photo click. Our model is trained on over 15000 images and achieves plausible performance."}</h1>', unsafe_allow_html=True)
 

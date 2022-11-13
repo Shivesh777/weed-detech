@@ -2,14 +2,12 @@
 
 This project helps detect and differentiate weed(unwanted plants) from crops in a field. 
 
-## Installation
-
-### StreamLit
+## Usage
 
 Run the following to install:
 
 ```sh
-pip install streamlit
+pip install -r requirements.txt
 ```
 
 ## Usage

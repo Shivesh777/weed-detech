@@ -51,7 +51,9 @@ def load_model():
 if file is None:
     pass
 else:
-    image = cv2.imread(file)
+    img = Image.open(file)
+    img = img.save("img.jpg")
+    image = cv2.imread("img.jpg")
     image = cv2.resize(image, (shape, shape))
     image_1 = np.reshape(image, (1 ,shape, shape, 3))
     pred = load_model().predict(image_1)

@@ -1,15 +1,15 @@
-import streamlit as st
-from PIL import Image
+import os
+import random
 import urllib.request
-import tensorflow as tf
+
 import cv2
 import numpy as np
+import streamlit as st
+import tensorflow as tf
 from appwrite.client import Client
-from appwrite.services.storage import Storage
 from appwrite.input_file import InputFile
-import random
-import os
-
+from appwrite.services.storage import Storage
+from PIL import Image
 
 shape = 224
 

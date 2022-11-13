@@ -4,6 +4,13 @@ import urllib.request
 import tensorflow as tf
 import cv2
 import numpy as np
+from appwrite.client import Client
+from appwrite.services.storage import Storage
+from appwrite.input_file import InputFile
+import random
+import os
+
+
 shape = 224
 
 u = 'https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png'
@@ -43,6 +50,21 @@ st.markdown(f'<h1 style="color:#000000;font-size:18px;">{"Please upload your fil
 
 file = st.file_uploader('', type=["jpg", "png"])
 
+st.button(label = "Opt into testing", on_click = load_to_appwrite)
+
+def load_to_appwrite():
+    if file is None:
+        st.write("Please upload an image.")
+    else:
+        client = Client()
+        (client
+        .set_endpoint('http://34.139.148.58/v1')
+        .set_project('637009ba1cc4e478f2ac')
+        .set_key(os.getenv('APPWRITE_API_KEY'))
+        )
+        storage = Storage(client)
+        result = storage.create_file('637009d1ea462ff0d224', 'unique()', InputFile.from_path("img.jpg"))
+
 def load_model():
     if 'model' not in st.session_state:
         urllib.request.urlretrieve("https://github.com/Shivesh777/weed-detech/releases/download/model-weights/model.h5", "model.h5")
@@ -54,6 +76,7 @@ if file is None:
 else:
     img = Image.open(file)
     img = img.save("img.jpg")
+
     image = cv2.imread("img.jpg")
     image = cv2.resize(image, (shape, shape))
     image_1 = np.reshape(image, (1 ,shape, shape, 3))

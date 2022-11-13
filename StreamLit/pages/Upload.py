@@ -62,4 +62,5 @@ else:
     endX =   int(pred[1][0][2] * 224)
     endY =   int(pred[1][0][3] * 224)
     cv2.rectangle(image, (startX, startY), (endX, endY),(0, 255, 0), 2)
-    plt.imshow(image)
+    image.save("img.jpg")
+    st.image("img.jpg", use_column_width=True)

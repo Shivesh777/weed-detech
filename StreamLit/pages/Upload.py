@@ -40,8 +40,6 @@ st.markdown(f'<h1 style="color:#000000;font-size:35px;">{"Weed Detech"}</h1>', u
 st.markdown(f'<h1 style="color:#000000;font-size:24px;">{"Witness the magic by simply uploading an image below and let our model do the talking."}</h1>', unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#000000;font-size:18px;">{"Please upload your file below:"}</h1>', unsafe_allow_html=True)
 
-
-
 file = st.file_uploader('', type=["jpg", "png"])
 
 def load_model():
@@ -53,7 +51,7 @@ def load_model():
 if file is None:
     pass
 else:
-    image = cv2.imread("file")
+    image = cv2.imread(file)
     image = cv2.resize(image, (shape, shape))
     image_1 = np.reshape(image, (1 ,shape, shape, 3))
     pred = load_model().predict(image_1)

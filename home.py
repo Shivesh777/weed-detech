@@ -15,7 +15,7 @@ def add_bg_from_url():
         f"""
          <style>
          .stApp {{
-             background-image: url("https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+             background-image: url("https://cdn.discordapp.com/attachments/1041031247935316030/1041226102548467812/Untitled_presentation_1.png");
              background-attachment: fixed;
              background-size: cover
          }}

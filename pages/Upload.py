@@ -88,3 +88,4 @@ else:
     cv2.rectangle(image, (startX, startY), (endX, endY),(0, 255, 0), 2)
     Image.fromarray(image).save("img.jpg")
     st.image("img.jpg", use_column_width=True)
+    st.markdown(f'<h1 style="color:#000000;font-size:15px;">{"Thank you for participating in improving and personalizing Weed Detech"}</h1>', unsafe_allow_html=True)

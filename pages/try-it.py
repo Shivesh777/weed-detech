@@ -1,15 +1,15 @@
-import os
-import random
+import streamlit as st
+from PIL import Image
 import urllib.request
-
+import tensorflow as tf
 import cv2
 import numpy as np
-import streamlit as st
-import tensorflow as tf
 from appwrite.client import Client
-from appwrite.input_file import InputFile
 from appwrite.services.storage import Storage
-from PIL import Image
+from appwrite.input_file import InputFile
+import random
+import os
+
 
 shape = 224
 
@@ -26,7 +26,7 @@ def add_bg_from_url():
         f"""
          <style>
          .stApp {{
-             background-image: url("https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+             background-image: url("https://cdn.discordapp.com/attachments/1041031247935316030/1041226102548467812/Untitled_presentation_1.png");
              background-attachment: fixed;
              background-size: cover
          }}
@@ -57,8 +57,6 @@ st.markdown(
 
 file = st.file_uploader("", type=["jpg", "png"])
 
-st.button(label="Opt into testing", on_click=load_to_appwrite)
-
 
 def load_to_appwrite():
     if file is None:
@@ -68,11 +66,17 @@ def load_to_appwrite():
         (
             client.set_endpoint("http://34.139.148.58/v1")
             .set_project("637009ba1cc4e478f2ac")
-            .set_key(os.getenv("APPWRITE_API_KEY"))
+            .set_key(
+                "f3c9e9b0ed0b3fb2b6029687884b332f7df170546104aff0f9ef0cb10829de1235e2bde03a7b2f1f97e0efa78426fa444da66fa8e750caa9a81a5dc107b68ed785bb7ef3d2149e5f162621a75d1a83749657ddfad7336f2b4aaed96d25ad2b59694d898b0ed9773f7ea1a7237cccc5d4916f4ae96c2fd730b16cc8fd69758a4b"
+            )
         )
         storage = Storage(client)
         result = storage.create_file(
             "637009d1ea462ff0d224", "unique()", InputFile.from_path("img.jpg")
+        )
+        st.markdown(
+            f'<h1 style="color:#000000;font-size:15px;">{"Thank you for participating in improving and personalizing Weed Detech. The data you put in is anonymized before being used for training."}</h1>',
+            unsafe_allow_html=True,
         )
 
 
@@ -103,7 +107,4 @@ else:
     cv2.rectangle(image, (startX, startY), (endX, endY), (0, 255, 0), 2)
     Image.fromarray(image).save("img.jpg")
     st.image("img.jpg", use_column_width=True)
-    st.markdown(
-        f'<h1 style="color:#000000;font-size:15px;">{"Thank you for participating in improving and personalizing Weed Detech, The data you put in is anonymized before being used for training."}</h1>',
-        unsafe_allow_html=True,
-    )
+    st.button(label="Opt into testing", on_click=load_to_appwrite)

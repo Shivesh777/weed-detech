@@ -20,11 +20,7 @@ streamlit run home.py
 
 ## Want to Contribute 🙋‍♂️?
 
-Awesome! If you want to contribute to this project, you're always welcome! See [Contributing Guidelines](CONTRIBUTING.md). You can also take a look at [open issues](https://github.com/Rishit-dagli/Fast-Transformer/issues) for getting more information about current or upcoming tasks.
-
-## Want to discuss? 💬
-
-Have any questions, doubts or want to present your opinions, views? You're always welcome. You can [start discussions](https://github.com/Rishit-dagli/Fast-Transformer/discussions).
+Awesome! If you want to contribute to this project, you're always welcome! See [Contributing Guidelines](CONTRIBUTING.md). You can also take a look at [open issues](https://github.com/Shivesh777/weed-detech/issues) for getting more information about current or upcoming tasks.
 
 
 ## License

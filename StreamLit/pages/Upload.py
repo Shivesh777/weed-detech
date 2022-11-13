@@ -4,7 +4,6 @@ import urllib.request
 import tensorflow as tf
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 shape = 224
 
 SEEDLING_EMOJI_URL = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/facebook/65/seedling_1f331" \

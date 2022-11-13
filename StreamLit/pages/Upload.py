@@ -4,7 +4,6 @@ import urllib.request
 import tensorflow as tf
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 shape = 224
 
 u = 'https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png'

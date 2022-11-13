@@ -1,3 +1,0 @@
-tensorflow==2.4.1
-opencv-python==4.5.3
-sklearn==0.23.2
